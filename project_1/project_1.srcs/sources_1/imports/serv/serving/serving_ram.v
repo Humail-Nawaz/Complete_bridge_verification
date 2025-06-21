@@ -19,49 +19,49 @@
 
 `default_nettype none
 module serving_ram
-  #(//Memory parameters
-    parameter depth = 256,
-    parameter aw    = $clog2(depth),    //8
-    parameter memfile = "")
-    
-   (input wire		   i_clk,
-    input wire [aw-1:0]	i_waddr,
-    input wire [7:0]	i_wdata,
-    input wire		    i_wen,
-    input wire [aw-1:0]	i_raddr,
-    output reg [7:0]	o_rdata,
-    input wire		    i_ren
-   //output reg ack
-    
-        );
+  #( // Memory parameters
+    parameter depth = 256,    //depth = 8192 then 1024 location 1024-128=896/2=448
+    parameter aw    = $clog2(depth),  
+    parameter memfile = ""
+  )
+  (
+    input wire          i_clk,
+    input wire          i_rst,
+    input wire [aw-1:0] i_waddr,
+    input wire [7:0]    i_wdata,
+    input wire          i_wen,
+    input wire [aw-1:0] i_raddr,
+    output reg [7:0]    o_rdata
+    //input wire          i_ren
+  );
+// 128 bytes for register file, 
+  reg [7:0] mem [0:depth-1] /* verilator public */;
+  integer i;
 
-   reg [7:0]		mem [0:depth-1] /* verilator public */;
-   //reg [7:0]init_data;
-  //reg write_ack, read_ack;
-   
-   always @(posedge i_clk) begin
-     //write_ack <= 1'b0;
-     //read_ack  <= 1'b0;
-   
-     if (i_wen) begin
-       mem[i_waddr] <= i_wdata;
-       //write_ack <= 1'b1;
-     end
-     else begin
-       o_rdata <= mem[i_raddr];
-       //read_ack <= 1'b1;
-     end
-   
-    // ack <= write_ack || read_ack;
-   end
+  // Synchronous read/write logic
+  always @(posedge i_clk) begin
+   if (i_rst) begin
+   o_rdata <= 8'h00;
+   end else begin
+      if (i_wen) begin
+        mem[i_waddr] <= i_wdata;  // Perform write
+        o_rdata      <= 8'h00;    // Mask output during write
+      end else begin
+        o_rdata <= mem[i_raddr];  // Perform read
+      end
+    end
+end
 
-   initial
-     if(|memfile) begin
-	$display("Preloading %m from %s", memfile);
-	$readmemh(memfile, mem);
-     end
-     
-     wire [63:0] debug_out;
-     assign debug_out = {mem[i_waddr], mem[i_waddr+8], mem[i_waddr+16], mem[i_waddr+24], mem[i_waddr+32], mem[i_waddr+40], mem[i_waddr+48], mem[i_waddr+56]};
+  // Initial block: zero-initialize memory, then optionally preload file
+initial begin
+ // o_rdata = 8'h00;
+  for (i = 0; i < depth; i = i + 1)
+    mem[i] = 8'h00;
+
+  if (|memfile) begin
+    $display("Preloading %m from %s", memfile);
+    $readmemh(memfile, mem);
+  end
+end
 
 endmodule

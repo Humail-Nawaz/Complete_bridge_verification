@@ -2,7 +2,7 @@
     
     module serving_bridge_top_tb;
     
-      parameter AW = 12;
+      parameter AW = 13;
     
       // Clock and reset
       reg clk=0;
@@ -99,69 +99,60 @@
         .o_rmready(o_rmready)
       );
     
-      // Clock generation
-      always #5 clk = ~clk;
-
+       // Clock generation
+       initial clk = 0;
+       always #5 clk = ~clk;
+     
+       // Test sequence
        initial begin
-                // Initialize
-                rst = 1;
-                i_awaddr = 12'h000;
-                i_awvalid = 0;
-                i_wdata = 32'h00000000;
-                i_wstrb = 4'hF;
-                i_wvalid = 0;
-                i_bready = 1;
-                i_araddr = 12'h000;
-                i_arvalid = 0;
-                i_rready = 1;
-    
-                #20; rst = 0;
-    
-        // -----------------------------
-                    // Write transaction to address 0x100
-                    // -----------------------------
-                    i_awvalid = 1;
-                    i_wvalid  = 1;
-                    i_bready = 1;
-                    i_awaddr = 12'h100;
-                    i_wdata = 32'hfadeface;
-                    i_wstrb = 4'b1111;
-                    #10;
-                    wait (o_awready && o_wready);
-                    #20;
-                    i_awvalid = 0;
-                    i_wvalid  = 0;
-                
-                    wait (o_bvalid);
-                    if(o_bresp==2'b00) begin
-                    $display("Data written without error");
-                    $display("Write response received: BRESP = %b", o_bresp);
-                    //$display("DATA written: WDATA = 0x%08X", cmplt_top.o_mwb_dat); 
-                    end
-                    else $display("Wrong data written");
- // -----------------------------
-// AXI2WB Read transaction from address 0x100
-// -----------------------------                             
-                    rst =1'b1;
-                    #10;
-                    rst=1'b0;
-                    i_arvalid = 1;
-                    i_araddr=12'h100;
-                    i_rready  = 1;                   
-                    wait (o_arready);
-                    #20;
-                    i_arvalid = 0;
-                    wait(o_rvalid)
-                    if(o_rresp ==2'b00) begin
-                    $display("Data read correctly without error");
-                    $display("Read data received: RDATA = 0x%08X, RRESP = %b", o_rdata, o_rresp);
-                    end
-                    else $display("wrong data read");
-                  $display("AXI write and read test complete.");
-                
-               
-        #100;
-        $finish;
-      end
-    
+       rst = 1;
+       #20;
+       rst = 0;
+         $display("Starting AXI write and read test...");
+         // -----------------------------
+         // Write transaction to address 0x100
+         // -----------------------------
+         i_awvalid = 1;
+         i_wvalid  = 1;
+         i_bready  = 1;
+         i_awaddr = 13'h010;
+         i_wdata = 32'hfadeface;
+         i_wstrb = 4'b1111;
+         #10;
+         wait (o_awready && o_wready);
+         #20;
+         i_awvalid = 0;
+         i_wvalid = 0;
+     
+         wait (o_bvalid);
+         if(o_bresp==2'b00) begin
+         $display("Data written without error");
+         end
+         else $display("Wrong data written");
+         #100;
+     
+         // -----------------------------
+         // Read transaction from address 0x100
+         // -----------------------------
+         rst =1'b1;
+         #10;
+         rst=1'b0;
+         i_arvalid= 1;
+         i_araddr=13'h010;
+         i_rready = 1;
+         #10;
+         wait (o_arready);
+         #20;
+         i_arvalid = 0;
+         wait(o_rvalid)
+         if(o_rresp ==2'b00) begin
+         $display("Data read correctly without error");
+         end
+         else $display("wrong data read");
+         #10;
+     
+         $display("AXI write and read test complete.");
+         $finish;
+       end
+
 endmodule

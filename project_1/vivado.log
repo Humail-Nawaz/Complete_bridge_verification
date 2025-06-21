@@ -2,10 +2,10 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Mon May 26 13:33:41 2025
-# Process ID: 32
+# Start of session at: Sat Jun 21 10:05:15 2025
+# Process ID: 16452
 # Current directory: C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2980 C:\Users\DELL\OneDrive\Desktop\FYP\TESTING\Bridge_verification\project_1\project_1.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14568 C:\Users\DELL\OneDrive\Desktop\FYP\TESTING\Bridge_verification\project_1\project_1.xpr
 # Log file: C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/vivado.log
 # Journal file: C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1\vivado.jou
 # Running On: DESKTOP-J0OTQA0, OS: Windows, CPU Frequency: 2295 MHz, CPU Physical cores: 2, Host memory: 17065 MB
@@ -75,47 +75,8 @@ WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 availab
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory 'C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/ip_repo/adder_brg_1_0'.
 INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.gen/sources_1'.
 Scanning sources...
 Finished scanning sources
-open_project: Time (s): cpu = 00:00:42 ; elapsed = 00:00:20 . Memory (MB): peak = 1129.227 ; gain = 311.184
-update_compile_order -fileset sources_1
-launch_simulation
-Time resolution is 1 ps
-source serving_bridge_top_tb.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-Data written without error
-Write response received: BRESP = 00
-Data read correctly without error
-Read data received: RDATA = 0xdefacexx, RRESP = 00
-AXI write and read test complete.
-$finish called at time : 325 ns : File "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sim_1/new/serving_bridge_top_tb.v" Line 164
-xsim: Time (s): cpu = 00:00:17 ; elapsed = 00:00:07 . Memory (MB): peak = 1202.945 ; gain = 33.258
-launch_simulation: Time (s): cpu = 00:00:20 ; elapsed = 00:00:13 . Memory (MB): peak = 1202.945 ; gain = 40.734
-current_wave_config {}
-Untitled 1
-add_wave {{/serving_bridge_top_tb/dut/serving}} 
-current_wave_config {Untitled 1}
-Untitled 1
-add_wave {{/serving_bridge_top_tb/dut/serving/ram}} 
-current_wave_config {Untitled 1}
-Untitled 1
-add_wave {{/serving_bridge_top_tb/dut/uut}} 
-restart
-run all
-Data written without error
-Write response received: BRESP = 00
-Data read correctly without error
-Read data received: RDATA = 0xdefacexx, RRESP = 00
-AXI write and read test complete.
-$finish called at time : 325 ns : File "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sim_1/new/serving_bridge_top_tb.v" Line 164
-close_sim
+open_project: Time (s): cpu = 00:00:50 ; elapsed = 00:00:25 . Memory (MB): peak = 1123.996 ; gain = 357.480

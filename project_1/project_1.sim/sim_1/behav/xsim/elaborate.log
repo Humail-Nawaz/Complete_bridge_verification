@@ -4,11 +4,71 @@ Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 32 for port 'o_wb_adr' [C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/new/serving_bridge_top.v:93]
-WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 10 for port 'o_rf_waddr' [C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/serving/serving.v:327]
-WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'o_rf_wdata' [C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/serving/serving.v:328]
-WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 10 for port 'o_rf_raddr' [C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/serving/serving.v:330]
-WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'i_rf_rdata' [C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/serving/serving.v:332]
-WARNING: [VRFC 10-5021] port 'i_timer_irq' is not connected on this instance [C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/new/serving_bridge_top.v:87]
+WARNING: [VRFC 10-3091] actual bit length 11 differs from formal bit length 32 for port 'o_wb_addr' [C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/new/serving_bridge_top.v:178]
+WARNING: [VRFC 10-3091] actual bit length 11 differs from formal bit length 32 for port 'o_wb_ext_adr' [C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/serving/serving.v:338]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 1 for port 'i_rdata' [C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/servile/servile.v:181]
+WARNING: [VRFC 10-5021] port 'i_timer_irq' is not connected on this instance [C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sim_1/new/serving_bridge_top_tb.v:60]
+WARNING: [VRFC 10-5021] port 'i_timer_irq' is not connected on this instance [C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/new/serving_bridge_top.v:167]
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/serving/serving.v" Line 21. Module serving(memfile="file.hex",memsize=8192,RESET_STRATEGY="MINI") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/servile/servile_rf_mem_if.v" Line 9. Module servile_rf_mem_if(depth=8192,rf_regs=36) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/servile/servile.v" Line 9. Module servile(rf_width=8,with_csr=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/servile/servile_mux.v" Line 8. Module servile_mux_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/servile/servile_arbiter.v" Line 9. Module servile_arbiter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_rf_ram_if.v" Line 2. Module serv_rf_ram_if(csr_regs=32'b0100) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_top.v" Line 3. Module serv_top(PRE_REGISTER=1'b1,COMPRESSED=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_state.v" Line 1. Module serv_state(WITH_CSR=1'b1,ALIGN=1'b0,MDU=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_decode.v" Line 2. Module serv_decode(PRE_REGISTER=1'b1,MDU=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_immdec.v" Line 2. Module serv_immdec_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_bufreg.v" Line 1. Module serv_bufreg(MDU=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_bufreg2.v" Line 1. Module serv_bufreg2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_ctrl.v" Line 2. Module serv_ctrl_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_alu.v" Line 2. Module serv_alu_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_rf_if.v" Line 2. Module serv_rf_if_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_mem_if.v" Line 2. Module serv_mem_if(WITH_CSR=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_csr.v" Line 2. Module serv_csr_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/new/complete_bridge.v" Line 2. Module complete_bridge doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/serving/serving.v" Line 21. Module serving(memfile="file.hex",memsize=8192,RESET_STRATEGY="MINI") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/servile/servile_rf_mem_if.v" Line 9. Module servile_rf_mem_if(depth=8192,rf_regs=36) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/servile/servile.v" Line 9. Module servile(rf_width=8,with_csr=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/servile/servile_mux.v" Line 8. Module servile_mux_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/servile/servile_arbiter.v" Line 9. Module servile_arbiter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_rf_ram_if.v" Line 2. Module serv_rf_ram_if(csr_regs=32'b0100) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_top.v" Line 3. Module serv_top(PRE_REGISTER=1'b1,COMPRESSED=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_state.v" Line 1. Module serv_state(WITH_CSR=1'b1,ALIGN=1'b0,MDU=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_decode.v" Line 2. Module serv_decode(PRE_REGISTER=1'b1,MDU=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_immdec.v" Line 2. Module serv_immdec_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_bufreg.v" Line 1. Module serv_bufreg(MDU=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_bufreg2.v" Line 1. Module serv_bufreg2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_ctrl.v" Line 2. Module serv_ctrl_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_alu.v" Line 2. Module serv_alu_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_rf_if.v" Line 2. Module serv_rf_if_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_mem_if.v" Line 2. Module serv_mem_if(WITH_CSR=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_csr.v" Line 2. Module serv_csr_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/new/complete_bridge.v" Line 2. Module complete_bridge doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.serving_ram(depth=8192,memfile="...
+Compiling module xil_defaultlib.servile_rf_mem_if(depth=8192,rf_...
+Compiling module xil_defaultlib.servile_mux_default
+Compiling module xil_defaultlib.servile_arbiter
+Compiling module xil_defaultlib.serv_rf_ram_if(csr_regs=32'b0100...
+Compiling module xil_defaultlib.serv_state(WITH_CSR=1'b1,ALIGN=1...
+Compiling module xil_defaultlib.serv_decode(PRE_REGISTER=1'b1,MD...
+Compiling module xil_defaultlib.serv_immdec_default
+Compiling module xil_defaultlib.serv_bufreg(MDU=1'b0)
+Compiling module xil_defaultlib.serv_bufreg2
+Compiling module xil_defaultlib.serv_ctrl_default
+Compiling module xil_defaultlib.serv_alu_default
+Compiling module xil_defaultlib.serv_rf_if_default
+Compiling module xil_defaultlib.serv_mem_if(WITH_CSR=1'b1)
+Compiling module xil_defaultlib.serv_csr_default
+Compiling module xil_defaultlib.serv_top(PRE_REGISTER=1'b1,COMPR...
+Compiling module xil_defaultlib.servile(rf_width=8,with_csr=1'b1...
+Compiling module xil_defaultlib.serving(memfile="file.hex",memsi...
+Compiling module xil_defaultlib.complete_bridge
+Compiling module xil_defaultlib.serving_bridge_top
+Compiling module xil_defaultlib.serving_bridge_top_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot serving_bridge_top_tb_behav

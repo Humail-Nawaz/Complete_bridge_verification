@@ -1,63 +1,143 @@
 `timescale 1ns / 1ps
 
-module serving_bridge_top #(parameter AW=12)
+module serving_bridge_top #(parameter AW=13,
+                            parameter USER_WIDTH=0,
+                            parameter ID_WIDTH=0,
+                            parameter memfile = "file.hex",
+                            parameter memsize = 8192,
+                            parameter sim = 1'b0,
+                            parameter RESET_STRATEGY = "MINI",
+                            parameter WITH_CSR = 1)
     (
      input wire clk,
      input wire rst,
-     // AXI2WB AXI SIGNALS FROM EXTERNAL(BUS/PERIPHERAL/ADAPTER) TO BRIDGE
+     input wire i_timer_irq,
+     // AXI2WB AXI SIGNALS FROM EXTERNAL(BUS/PERIPHERAL/ADAPTER) TO BRIDGE (slave intereface)
         // AXI adress write channel
         input wire [AW-1:0] i_awaddr,
         input wire i_awvalid,
         output wire o_awready,
+        //unused signals
+        input wire [ID_WIDTH-1:0] i_aw_id,
+        input wire [7:0] i_aw_len,
+        input wire [3:0] i_aw_size,
+        input wire [1:0] i_aw_burst,
+        input wire i_aw_lock,
+        input wire [3:0] i_aw_cache,
+        input wire [2:0] i_aw_prot,
+        input wire [3:0] i_aw_qos,
+        input wire [3:0] i_aw_region,
+        input wire [5:0] i_aw_atop,
+        input wire [USER_WIDTH-1:0] i_aw_user,
+        
         //AXI adress read channel
         input wire [AW-1:0] i_araddr,
         input wire i_arvalid,
         output wire o_arready,
+        //unused signals
+        input wire[ID_WIDTH-1:0] i_ar_id,
+        input wire [7:0] i_ar_len,
+        input wire [2:0] i_ar_size,
+        input wire [1:0] i_ar_burst,
+        input wire i_ar_lock,
+        input wire [3:0]i_ar_cache,
+        input wire [2:0]i_ar_prot,
+        input wire [3:0]i_ar_qos,
+        input wire [3:0]i_ar_region,
+        input wire [USER_WIDTH-1:0] i_ar_user,
+        
         //AXI write channel
         input wire [31:0] i_wdata,
         input wire [3:0] i_wstrb,
         input wire i_wvalid,
         output wire o_wready,
+        //unused signals
+        input wire i_w_last,
+        input wire [USER_WIDTH-1:0] i_w_user,
+        
         //AXI response channel
         output wire [1:0] o_bresp,
         output wire o_bvalid,
         input wire i_bready,
+        //unused signals 
+        output wire [ID_WIDTH-1:0] o_b_id ,
+        output wire [USER_WIDTH-1:0] o_b_user,
+        
         //AXI read channel
         output wire [31:0] o_rdata,
         output wire [1:0] o_rresp,
         output wire o_rlast,
         output wire o_rvalid,
         input wire i_rready,
-        
+        //unused signals
+        output wire [ID_WIDTH-1:0] o_r_id,
+        output wire [USER_WIDTH-1:0] o_r_user,
+    
         
         // AXI2WB AXI SIGNALS FROM BRIDGE TO EXTERNAL(PERIPHERAL/ADAPTER/BUS)
         // AXI adress write channel
         output wire [AW-1:0] o_awmaddr,
         output wire o_awmvalid,
         input wire i_awmready,
+        //unused signals
+        output wire [ID_WIDTH-1:0] o_awm_id,
+        output wire [7:0] o_awm_len,
+        output wire [2:0] o_awm_size,
+        output wire [1:0] o_awm_burst,
+        output wire o_awm_lock,
+        output wire [3:0] o_awm_cache,
+        output wire [2:0] o_awm_prot,
+        output wire [3:0] o_awm_qos,
+        output wire [3:0] o_awm_region,
+        output wire [5:0] o_awm_atop,
+        output wire [USER_WIDTH-1:0] o_awm_user,
+        
         //AXI adress read channel
         output wire [AW-1:0] o_armaddr,
         output wire o_armvalid,
         input wire i_armready,
+        //unused signals
+        output wire [ID_WIDTH-1:0] o_arm_id,
+        output wire [7:0] o_arm_len,
+        output wire [2:0] o_arm_size,
+        output wire [1:0] o_arm_burst,
+        output wire o_arm_lock,
+        output wire [3:0] o_arm_cache,
+        output wire [2:0] o_arm_prot,
+        output wire [3:0] o_arm_qos,
+        output wire [3:0] o_arm_region,
+        output wire [USER_WIDTH-1:0] o_arm_user,
+        
         //AXI write channel
         output wire [31:0] o_wmdata,
         output wire [3:0] o_wmstrb,
         output wire o_wmvalid,
         input wire i_wmready,
+         //unused signals
+        output wire o_wm_last,
+        output wire [USER_WIDTH-1:0] o_wm_user,
+        
         //AXI response channel
         input wire [1:0] i_bmresp,
         input wire i_bmvalid,
         output wire o_bmready,
+        //unused signals 
+        input wire [ID_WIDTH-1:0] i_bm_id,
+        input wire [USER_WIDTH-1:0] i_bm_user,
+    
         //AXI read channel
         input wire[31:0] i_rmdata,
         input wire [1:0] i_rmresp,
         input wire i_rmlast,
         input wire i_rmvalid,
-        output wire o_rmready
+        output wire o_rmready,
+        //unused signals
+        input wire [ID_WIDTH-1:0] i_rm_id,
+        input wire [USER_WIDTH-1:0] i_rm_user
     );
  
 
-// INITERNAL WISHBBONE WIRES FOR SERVING AN DBRIDGE CONNECTION
+// INITERNAL WISHBBONE WIRES FOR SERVING AND BRIDGE CONNECTION
 // FROM SERVING TO BRIDGE
           wire [AW-1:2] i_swb_adr;
           wire [31:0] i_swb_dat;
@@ -82,15 +162,50 @@ wire sel_wadr;           //1 for ext and 0 for if
 wire sel_wdata;
 wire sel_rdata;
 wire sel_wen ;     
+
+// Tie Off unused Axi Output Signals
+assign o_r_id        = {ID_WIDTH{1'b0}};
+assign o_r_user      = {USER_WIDTH{1'b0}};
+assign o_b_id        = {ID_WIDTH{1'b0}};
+assign o_b_user      = {USER_WIDTH{1'b0}};
+assign o_awm_id      = {ID_WIDTH{1'b0}};
+assign o_awm_len     = 8'b0;
+assign o_awm_size    = 3'b0;
+assign o_awm_burst   = 2'b0;
+assign o_awm_lock    = 1'b0;
+assign o_awm_cache   = 4'b0;
+assign o_awm_prot    = 3'b0;
+assign o_awm_qos     = 4'b0;
+assign o_awm_region  = 4'b0;
+assign o_awm_atop    = 6'b0;
+assign o_awm_user    = {USER_WIDTH{1'b0}};
+assign o_wm_last     = 1'b0;
+assign o_wm_user     = {USER_WIDTH{1'b0}};
+assign o_arm_id      = {ID_WIDTH{1'b0}};
+assign o_arm_len     = 8'b0;
+assign o_arm_size    = 3'b0;
+assign o_arm_burst   = 2'b0;
+assign o_arm_lock    = 1'b0;
+assign o_arm_cache   = 4'b0;
+assign o_arm_prot    = 3'b0;
+assign o_arm_qos     = 4'b0;
+assign o_arm_region  = 4'b0;
+assign o_arm_user    = {USER_WIDTH{1'b0}};
+
            
  //SERVING INSTANTIATION
- serving   serving
+ serving #(.memfile(memfile),
+       .memsize (memsize),
+       .sim (sim),
+       .RESET_STRATEGY(RESET_STRATEGY),
+       .WITH_CSR(WITH_CSR))
+    serving
       (
        .i_clk(clk),
        .i_rst(rst),
-// input wire           i_timer_irq,
+       .i_timer_irq(i_timer_irq),
     
-       .o_wb_adr(i_swb_adr),
+       .o_wb_addr(i_swb_adr),
        .o_wb_dat(i_swb_dat),
        .o_wb_sel(i_swb_sel),
        .o_wb_we(i_swb_we),

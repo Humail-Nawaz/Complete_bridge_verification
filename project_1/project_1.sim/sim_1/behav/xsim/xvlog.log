@@ -1,0 +1,50 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/new/complete_bridge.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module complete_bridge
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_aligner.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module serv_aligner
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module serv_alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_bufreg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module serv_bufreg
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_bufreg2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module serv_bufreg2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_compdec.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module serv_compdec
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_csr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module serv_csr
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_ctrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module serv_ctrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_debug.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module serv_debug
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module serv_decode
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_immdec.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module serv_immdec
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_mem_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module serv_mem_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_rf_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module serv_rf_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_rf_ram_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module serv_rf_ram_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_state.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module serv_state
+WARNING: [VRFC 10-3380] identifier 'trap_pending' is used before its declaration [C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_state.v:105]
+WARNING: [VRFC 10-3380] identifier 'trap_pending' is used before its declaration [C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_state.v:112]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/rtl/serv_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module serv_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/servile/servile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module servile
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/servile/servile_arbiter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module servile_arbiter
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/servile/servile_mux.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module servile_mux
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/servile/servile_rf_mem_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module servile_rf_mem_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/serving/serving.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module serving
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/new/serving_bridge_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module serving_bridge_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sources_1/imports/serv/serving/serving_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module serving_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sim_1/new/serving_bridge_top_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module serving_bridge_top_tb

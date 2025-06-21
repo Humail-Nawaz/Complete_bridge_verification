@@ -19,25 +19,31 @@
 
 `default_nettype none
 module serving
+  #(      parameter memfile = "",
+            parameter memsize = 1024,
+            parameter sim = 1'b0,
+            parameter RESET_STRATEGY = "NONE",
+            parameter WITH_CSR = 1)
   (
    input wire 	      i_clk,
    input wire 	      i_rst,
    input wire 	      i_timer_irq,
-   // SIGNALS TO BRIDGE
-   output wire [31:0] o_wb_adr,
+   // SIGNALS TO BRIDGE //wishbone master interface
+   output wire [31:0] o_wb_addr,
+   output wire [12:2] o_wb_adr,
    output wire [31:0] o_wb_dat,
    output wire [3:0]  o_wb_sel,
    output wire 	      o_wb_we ,
    output wire 	      o_wb_stb,
    input wire [31:0]  i_wb_rdt,
    input wire 	      i_wb_ack,
-   // SIGNALS FROM BRIDGE
-   input wire [11:2]  adr_brg,
+   // SIGNALS FROM BRIDGE //wishbone slave interfcae
+   input wire [12:2]  adr_brg,
    input wire [31:0]  data_brg,
    input wire         stb_brg,
    input wire         wen_brg,
    input  wire [3:0]  sel_brg,
-   output wire [31:0] rdt_brg,
+   output reg [31:0] rdt_brg,
    output wire        ack_brg,
     // MUX SELECTION
     input wire sel_wadr,
@@ -47,12 +53,12 @@ module serving
     input wire sel_wen    
    );
       reg [1:0] bsel;
-      reg [2:0]rsel;
-      parameter memfile = "";
-      parameter memsize = 1024;
-      parameter sim = 1'b0;
-      parameter RESET_STRATEGY = "NONE";
-      parameter WITH_CSR = 1;
+      reg [3:0]rsel;
+//      parameter memfile = "";
+//      parameter memsize = 1024;
+//      parameter sim = 1'b0;
+//      parameter RESET_STRATEGY = "NONE";
+//      parameter WITH_CSR = 1;
       localparam regs = 32+WITH_CSR*4;
    
       localparam rf_width = 8;
@@ -79,14 +85,15 @@ module serving
       wire [rf_width-1:0] sram_rdata;
       wire    sram_ren;
       
-      wire [9:0] wadr_if;    // Write address from interface
-      wire [9:0] wadr;       // Final write address (either external or from interface)
+      localparam w = 12;
+      wire [w:0] wadr_if;    // Write address from interface
+      wire [w:0] wadr;       // Final write address (either external or from interface)
       wire [7:0] wdata_if;    // Write data from interface
       wire [7:0] wdata;       // Final write data (either external or from interface)
-      wire [9:0] radr_if;
+      wire [w:0] radr_if;
       wire wen_if;            // Write enable from interface
       wire wen;               // Final write enable
-      reg [9:0] radr;
+      wire [w:0] radr;
       wire [7:0] o_rdata_dout;
       wire [7:0] rdata_din;
       wire [7:0] rdata;
@@ -95,22 +102,21 @@ module serving
       // ------ DATA SLICING ---------- //
       
    wire intermediate;
-   
+   //wire [31:0] o_wb_adr;
    //reg [31:0] wdata_ext;      // Changed to 32 bits for clarity
    reg [7:0]  byte_to_write;
    reg        done_w, done_r;
    reg [31:0] data_read;
    reg ack_reg,wait_for_rdata;
-   reg [9:0] rd_addr, wr_addr;
-  
-  always @(posedge i_clk or posedge i_rst) begin
+   reg [w:0] rd_addr, wr_addr;
+   reg [w:0] base_rd_addr;
+   
+   
+  assign o_wb_addr = o_wb_adr[12:2];
+  always @(posedge i_clk) begin
        if (i_rst) begin
            bsel <= 2'b00;
-           rsel <= 3'b00;
-           wr_addr <= 10'd0;
-           rd_addr <= 10'd0;
-           byte_to_write <= 8'd0;
-           data_read <= 32'd0;
+           rsel <= 4'b0000;
            done_w <= 1'b0;
            done_r <= 1'b0;
            ack_reg <= 1'b0;
@@ -123,6 +129,7 @@ module serving
    
            // ------------- WRITE LOGIC ---------------
            if (wen_brg && stb_brg) begin
+         
                case (sel_brg)
                    4'b1000: begin
                        byte_to_write <= data_brg[7:0];
@@ -149,20 +156,12 @@ module serving
                        ack_reg <= 1'b1;
                    end
                    4'b1111: begin
-                       byte_to_write <= data_brg[bsel * 8 +: 8];
-   
-                       if (bsel == 2'd0)
-                           wr_addr <= adr_brg;
-                       else
-                           wr_addr <= wr_addr + 1;
-   
-                       if (bsel == 2'd3) begin
-                           bsel <= 2'd0;
-                           done_w <= 1'b1;
-                           ack_reg <= 1'b1;
-                       end else begin
-                           bsel <= bsel + 1;
-                       end
+                   case(bsel) 
+                   2'd0: begin byte_to_write <=data_brg[7:0];   bsel<=2'd1;   wr_addr<=adr_brg; end
+                   2'd1: begin byte_to_write <=data_brg[15:8]; bsel<=2'd2;  wr_addr<=wr_addr+1; end
+                   2'd2: begin byte_to_write <=data_brg[23:16]; bsel<=2'd3;  wr_addr<=wr_addr+1; end
+                   2'd3: begin byte_to_write <=data_brg[31:24]; bsel<=2'd0;  wr_addr<=wr_addr+1; done_w <= 1'b1; ack_reg <=1'b1; end
+                   endcase       
                    end
                endcase
            end
@@ -194,58 +193,76 @@ module serving
                        done_r <= 1'b1;
                        ack_reg <= 1'b1;
                    end
-                   4'b1111: begin
-                       if (!wait_for_rdata) begin
-                                // Step 1: Start new read
-                                if (rsel == 3'd0)
-                                    rd_addr <= adr_brg;
-                                else
-                                    rd_addr <= rd_addr + 1;
-                            wait_for_rdata <= 1'b1;
-                            end else begin
-                                // Step 2: Capture delayed rdata (now valid)
-                                data_read[rsel * 8 +: 8] <= rdata;
-                        
-                                wait_for_rdata <= 1'b0;
-                        
-                                if (rsel == 3'd4) begin
-                                    rsel <= 2'd0;
-                                    done_r <= 1'b1;
-                                    ack_reg <= 1'b1;
-                                end else begin
-                                    rsel <= rsel + 1;
-                                end
-                            end
-                        end
-               endcase
+                  4'b1111: begin
+                     case (rsel)
+                       4'd0: begin
+                         rd_addr <= adr_brg;
+                         rsel <= 4'd1;
+                       end
+                   
+                       4'd1: begin
+                         rsel <= 4'd2; 
+                       end
+                   
+                       4'd2: begin
+                         data_read[7:0] <= rdata;
+                         rd_addr <= rd_addr + 1;
+                         rsel <= 4'd3;
+                       end
+                   
+                       4'd3: begin
+                         rsel <= 4'd4;
+                       end
+                   
+                       4'd4: begin
+                         data_read[15:8] <= rdata;
+                         rd_addr <= rd_addr + 1;
+                         rsel <= 4'd5;
+                       end
+                   
+                       4'd5: begin
+                         rsel <= 4'd6;
+                       end
+                   
+                       4'd6: begin
+                         data_read[23:16] <= rdata;
+                         rd_addr <= rd_addr + 1;
+                         rsel <= 4'd7;
+                       end
+                   
+                       4'd7: begin
+                         rsel <= 4'd8;
+                       end
+                       4'd8: begin
+                         data_read[31:24] <= rdata;
+                         rsel <= 4'd9;
+                       end
+                       
+                       4'd9: begin
+                         rdt_brg <= data_read;  
+                         ack_reg <= 1'b1;
+                         done_r <= 1'b1;
+                         rsel <= 4'd0;
+                       end
+                     endcase
+                   end
+           endcase  
            end
        end
    end
-  
-   // ----- DATA SLICING ------ //
-      
+ 
    
       assign wadr  = sel_wadr   ?  wr_addr  : wadr_if;
       assign wdata = sel_wdata  ?  byte_to_write : wdata_if;
-      
-      
-      //assigning bridge read and write address to ram 
-      always @(posedge i_clk)  begin
-            if(i_rst)
-              radr <=10'b0;
-            else if(sel_radr)
-              radr <= rd_addr;
-            else
-              radr <= radr_if;
-      end
-      
+      assign radr = sel_radr ? rd_addr : radr_if;
+
      // bridge ack 
       assign ack_brg = ack_reg;
       
       
-      assign rdata    = sel_rdata ? 0 : rdata_din;
-      assign o_rdata_dout = sel_rdata ? rdata_din : 0;
-      assign rdt_brg = data_read;
+      assign rdata    = sel_rdata ? 0 : rdata_din; //0 to return rdt to brg
+      assign o_rdata_dout = sel_rdata ? rdata_din : 0;  //1 to return rdt to interface
+      //assign rdt_brg = data_read;
       
       assign intermediate = stb_brg ? wen_brg:1'b0;
       assign wen = sel_wen ? intermediate : wen_if;
@@ -257,12 +274,14 @@ module serving
       ram
         (// Wishbone interface
          .i_clk (i_clk),
+         .i_rst(i_rst),
          .i_waddr  (wadr),
          .i_wdata  (wdata),
          .i_wen    (wen),
          .i_raddr  (radr),
-         .o_rdata  (rdata_din),
-         .i_ren    (rf_ren));
+         .o_rdata  (rdata_din)
+        // .i_ren    (rf_ren)
+         );
         // .ack      (ack_brg));
    
       servile_rf_mem_if
@@ -299,6 +318,7 @@ module serving
         #(.reset_pc (32'h0000_0000),
           .reset_strategy (RESET_STRATEGY),
           .sim (sim),
+          .rf_width(rf_width),
           .with_csr (WITH_CSR))
       servile
         (

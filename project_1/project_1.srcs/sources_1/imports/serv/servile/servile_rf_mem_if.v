@@ -37,7 +37,10 @@ module servile_rf_mem_if
     input wire		      i_wb_we,
     input wire		      i_wb_stb,
     output wire [31:0]	      o_wb_rdt,
-    output reg		      o_wb_ack);
+    output reg		      o_wb_ack,
+    output wire [aw-1:0] rf_waddr_out,
+    output wire [aw-1:0] rf_raddr_out,
+    output wire bsel_out);
 
    reg [1:0] 		bsel;
 
@@ -47,6 +50,8 @@ module servile_rf_mem_if
 
    wire [aw-1:0] rf_waddr = ~{{aw-rf_depth{1'b0}},i_waddr};
    wire [aw-1:0] rf_raddr = ~{{aw-rf_depth{1'b0}},i_raddr};
+   assign rf_waddr_out=rf_waddr;
+   assign rf_raddr_out=rf_raddr;
 
    assign o_sram_waddr = wb_en ? {i_wb_adr[aw-1:2],bsel} : rf_waddr;
    assign o_sram_wdata = wb_en ? i_wb_dat[bsel*8+:8]     : i_wdata;
@@ -71,7 +76,7 @@ module servile_rf_mem_if
       end
       regzero <= &i_raddr[rf_depth-1:2];
    end
-
+   assign bsel_out = bsel;
    assign o_rdata = regzero ? 8'd0 : i_sram_rdata;
 
 endmodule

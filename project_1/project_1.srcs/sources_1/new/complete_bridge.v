@@ -1,6 +1,6 @@
 `default_nettype none
 module complete_bridge
-  #(parameter AW = 12)
+  #(parameter AW = 13)
   (
    input wire i_clk,
    input wire i_rst,
@@ -134,6 +134,7 @@ always @(*) begin
        WBREAD: next_state <= (i_rmvalid)? WB2AXI_RRESP: WBREAD;
        WB2AXI_WRESP: next_state <= bridge_idle;
        WB2AXI_RRESP: next_state <= bridge_idle;
+       default: next_state <= bridge_idle;
     endcase
 end
 //output sequential logic
@@ -168,16 +169,15 @@ end
          o_swb_rdt <= 32'b0;
          o_swb_ack <= 1'b0;
          // sel lines
-         sel_radr <=1'b0;
-         sel_wadr <=1'b0;           //1 for ext and 0 for if
-         sel_wdata <= 1'b0;
-         sel_rdata <= 1'b0;
-         sel_wen <=1'b0;
+         sel_radr <=1'b0;    //1 for external 0 for internal
+         sel_wadr <=1'b0;    //1 for external 0 for internal         
+         sel_wdata <= 1'b0;  //1 for external 0 for internal
+         sel_rdata <= 1'b1;  //1 to return rdt to interface and 0 to return rdt to brg
+         sel_wen <=1'b0;     //1 for external 0 for internal
       end
       else begin
       
-    case(state)
-    
+    case(state) 
     bridge_idle : begin
          //AXI SIGNALS (AXI2WB)
           o_awready <= 1'b0;
@@ -197,8 +197,7 @@ end
           o_wmvalid <= 1'b0;
           o_bmready <= 1'b0;
           o_rmready <= 1'b0;
-          
-        // WISHBONE SIGNALS (AXI2WB)
+         // WISHBONE SIGNALS (AXI2WB)
          o_mwb_adr <= {AW-2{1'b0}};
          o_mwb_dat <= 32'b0;
          o_mwb_sel <= 4'b0;
@@ -207,33 +206,41 @@ end
          // WISHBONE SIGNALS (WB2AXI)
          o_swb_rdt <= 32'b0;
          o_swb_ack <= 1'b0;
-         //sel lines for serving 
-         sel_radr <=1'b0;
-         sel_wadr <=1'b0;           //1 for ext and 0 for if
-         sel_wdata <= 1'b0;
-         sel_rdata <= 1'b0;
-         sel_wen <=1'b0;
+         //sel lines
+          sel_radr <=1'b0;    //1 for external 0 for internal
+          sel_wadr <=1'b0;    //1 for external 0 for internal         
+          sel_wdata <= 1'b0;  //1 for external 0 for internal
+          sel_rdata <= 1'b1;  //1 to return rdt to interface and 0 to return rdt to brg
+          sel_wen <=1'b0;     //1 for external 0 for internal
     end
+    
 // AXI2WB Bridge states start  /////
         AXI2WB_start: begin
             if (i_awvalid && arbiter) begin
                 o_mwb_adr[AW-1:2] <= i_awaddr[AW-1:2];
                 o_awready <= 1'b1;
-                sel_wadr <= 1'b1;
-                sel_radr <=1'b1;
                 arbiter <= 1'b0;
+                //sel lines asserted for external read and write to serving ram
+                sel_wadr <= 1'b1;
+                sel_radr <= 1'b1;
+                sel_wen  <= 1'b1;
+                sel_rdata<= 1'b0;
+                sel_wdata<= 1'b1;
+                
 
                 if (i_wvalid) begin               
                     o_mwb_stb <= 1'b1;
                     o_mwb_sel <= i_wstrb;
                     o_mwb_dat <= i_wdata[31:0];
                     o_mwb_we <= 1'b1;
-                    sel_wen  <=1'b1;
                     o_wready <= 1'b1;
-                    sel_wdata <=1'b1;
-                    sel_rdata <= 1'b0;
-                   
-                end
+//sel lines asserted for external read and write to serving ram
+                    sel_wadr <= 1'b1;
+                    sel_radr <= 1'b1;
+                    sel_wen  <= 1'b1;
+                    sel_rdata<= 1'b0;
+                    sel_wdata<= 1'b1;
+                 end
             end
             else if (i_arvalid) begin
                  o_mwb_adr[AW-1:2] <= i_araddr[AW-1:2];
@@ -241,9 +248,12 @@ end
                  o_mwb_stb <= 1'b1;
                  o_arready <= 1'b1;
                  o_mwb_we <= 1'b0;
-                 sel_radr <=1'b1;
-                 sel_wadr<=1'b1;
-                
+//sel lines asserted for external read and write to serving ram
+                 sel_wadr <= 1'b1;
+                 sel_radr <= 1'b1;
+                 sel_wen  <= 1'b1;
+                 sel_rdata<= 1'b0;
+                 sel_wdata<= 1'b1;
 	        end
 	   end
         
@@ -253,10 +263,14 @@ end
                     o_mwb_sel <= i_wstrb;
                     o_mwb_dat <= i_wdata[31:0];
                     o_mwb_we <= 1'b1;
-                    sel_wen <=1'b1;
                     o_wready <= 1'b1;
-                    
-              end
+//sel lines asserted for external read and write to serving ram
+                    sel_wadr <= 1'b1;
+                    sel_radr <= 1'b1;
+                    sel_wen  <= 1'b1;
+                    sel_rdata<= 1'b0;
+                    sel_wdata<= 1'b1;
+               end
            end
 
         AXI2WB_WBWACK : begin
@@ -264,8 +278,13 @@ end
                  o_mwb_stb <= 1'b0;
                  o_mwb_sel <= 4'h0;
                  o_mwb_we <= 1'b0;
-                 sel_wen <= 1'b0;
                  o_bvalid <= 1'b1;
+//sel lines asserted for external read and write to serving ram
+                 sel_wadr <= 1'b1;
+                 sel_radr <= 1'b1;
+                 sel_wen  <= 1'b1;
+                 sel_rdata<= 1'b0;
+                 sel_wdata<= 1'b1;
                  
               end
           end
@@ -276,21 +295,38 @@ end
                      o_mwb_sel <= 4'h0;
                      o_mwb_we <= 1'b0;
                      o_rvalid <= 1'b1;
-                     sel_rdata <= 1'b0;
                      o_rdata <= i_mwb_rdt;
+//sel lines asserted for external read and write to serving ram
+                     sel_wadr <= 1'b1;
+                     sel_radr <= 1'b1;
+                     sel_wen  <= 1'b1;
+                     sel_rdata<= 1'b0;
+                     sel_wdata<= 1'b1; 
                      
               end
            end
 
         AXI2WB_BAXI : begin
-                      o_bvalid <= 1'b1;
+                    o_bvalid <= 1'b1;
+ //sel lines asserted for external read and write to serving ram
+                    sel_wadr <= 1'b1;
+                    sel_radr <= 1'b1;
+                    sel_wen  <= 1'b1;
+                    sel_rdata<= 1'b0;
+                    sel_wdata<= 1'b1;   
                       if (i_bready) begin
-                           o_bvalid <= 1'b0;    
-                      end                    
+                           o_bvalid <= 1'b0; 
+                        end                    
                end
 
         AXI2WB_RRAXI : begin
                       o_rvalid <= 1'b1;
+  //sel lines for external read and write to serving ram
+                        sel_wadr <= 1'b1;
+                        sel_radr <= 1'b1;
+                        sel_wen  <= 1'b1;
+                        sel_rdata<= 1'b0;
+                        sel_wdata<= 1'b1;   
                       if (i_rready)
                          o_rvalid <= 1'b0;
                      end      //AXI2WB Bridge states end 
@@ -298,11 +334,12 @@ end
        ///   WB2AXI BRIDGE AND STATES START  ////
                           WB2AXI_start: begin
                                  o_swb_ack <= 1'b0;
-                                 sel_radr <= 1'b0;
-                                 sel_wadr <=1'b0;           //1 for ext and 0 for if
-                                 sel_wdata <=1'b0;
-                                 sel_rdata <= 1'b0;
-                                 sel_wen <=1'b0;
+                         //sel lines
+                                   sel_radr <=1'b0;    //1 for external 0 for internal
+                                   sel_wadr <=1'b0;    //1 for external 0 for internal         
+                                   sel_wdata <= 1'b0;  //1 for external 0 for internal
+                                   sel_rdata <= 1'b1;  //1 to return rdt to interface and 0 to return rdt to brg
+                                   sel_wen <=1'b0;     //1 for external 0 for internal
                                   if (i_swb_we) begin
                                          o_awmvalid <= 1'b1;
                                            if(i_awmready)
@@ -318,14 +355,27 @@ end
                            WBWRITE: begin
                                o_wmvalid <=1'b1;
                                o_swb_ack <=1'b0;
+  //sel lines for internal selection
+                             sel_radr <=1'b0;    //1 for external 0 for internal
+                             sel_wadr <=1'b0;    //1 for external 0 for internal         
+                             sel_wdata <= 1'b0;  //1 for external 0 for internal
+                             sel_rdata <= 1'b1;  //1 to return rdt to interface and 0 to return rdt to brg
+                             sel_wen <=1'b0;     //1 for external 0 for internal
                                if(i_wmready) begin
                                   o_wmdata <= i_swb_dat;
                                   o_wmstrb <= i_swb_sel;
                                   o_bmready <=1'b1;        
                                end 
                            end
+    
                          WB2AXI_WRESP: begin
                                 o_bmready <=1'b1;
+  //sel lines
+                      sel_radr <=1'b0;    //1 for external 0 for internal
+                      sel_wadr <=1'b0;    //1 for external 0 for internal         
+                      sel_wdata <= 1'b0;  //1 for external 0 for internal
+                      sel_rdata <= 1'b1;  //1 to return rdt to interface and 0 to return rdt to brg
+                      sel_wen <=1'b0;     //1 for external 0 for internal
                                 if(i_bmvalid) begin
                                  o_swb_ack <=1'b1;
                                            if (i_bmresp != 2'b00)
@@ -338,9 +388,21 @@ end
                          
                           WBREAD: begin
                                o_rmready <=1'b1; 
+                                //sel lines
+                                 sel_radr <=1'b0;    //1 for external 0 for internal
+                                 sel_wadr <=1'b0;    //1 for external 0 for internal         
+                                 sel_wdata <= 1'b0;  //1 for external 0 for internal
+                                 sel_rdata <= 1'b1;  //1 to return rdt to interface and 0 to return rdt to brg
+                                 sel_wen <=1'b0;     //1 for external 0 for internal
                                end 
                                
                           WB2AXI_RRESP: begin
+                          //sel lines
+                               sel_radr <=1'b0;    //1 for external 0 for internal
+                               sel_wadr <=1'b0;    //1 for external 0 for internal         
+                               sel_wdata <= 1'b0;  //1 for external 0 for internal
+                               sel_rdata <= 1'b1;  //1 to return rdt to interface and 0 to return rdt to brg
+                               sel_wen <=1'b0;     //1 for external 0 for internal
                              if (i_rmresp != 2'b00) begin
                                               $display("Error while reading data");
                                           end else if (i_rmlast) begin
@@ -377,6 +439,12 @@ end
                               // WISHBONE SIGNALS (WB2AXI)
                               o_swb_rdt <= 32'b0;
                               o_swb_ack <= 1'b0;
+                              //sel lines
+                               sel_radr <=1'b0;    //1 for external 0 for internal
+                               sel_wadr <=1'b0;    //1 for external 0 for internal         
+                               sel_wdata <= 1'b0;  //1 for external 0 for internal
+                               sel_rdata <= 1'b1;  //1 to return rdt to interface and 0 to return rdt to brg
+                               sel_wen <=1'b0;     //1 for external 0 for internal
                           end
                          
                         endcase
