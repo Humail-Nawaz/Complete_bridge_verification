@@ -134,3 +134,643 @@ Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // [GUI Memory]: 105 MB (+107637kb) [00:00:38]
 // [Engine Memory]: 967 MB (+862829kb) [00:00:38]
 // WARNING: HEventQueue.dispatchEvent() is taking  4524 ms.
+// Project name: project_1; location: C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1; part: xc7s50csga324-1
+dismissDialog("Open Project"); // bq
+// [Engine Memory]: 1,024 MB (+8257kb) [00:00:48]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,026 MB. GUI used memory: 58 MB. Current time: 6/21/25, 10:06:24 AM PKT
+// PAPropertyPanels.initPanels (serving_bridge_top.v) elapsed time: 0.2s
+// Elapsed time: 15 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, serving_bridge_top (serving_bridge_top.v)]", 1, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, serving_bridge_top (serving_bridge_top.v)]", 1, true, false, false, false, false, true); // D - Double Click - Node
+// [GUI Memory]: 118 MB (+7844kb) [00:01:01]
+// Elapsed time: 34 seconds
+selectCodeEditor("serving_bridge_top.v", 335, 80); // ac
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, serving_bridge_top (serving_bridge_top.v), serving : serving (serving.v)]", 2, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, serving_bridge_top (serving_bridge_top.v), serving : serving (serving.v)]", 2, true, false, false, false, false, true); // D - Double Click - Node
+selectCodeEditor("serving.v", 42, 278); // ac
+typeControlKey((HResource) null, "serving.v", 'c'); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "serving_bridge_top.v", 1); // o
+selectCodeEditor("serving_bridge_top.v", 265, 94); // ac
+typeControlKey((HResource) null, "serving_bridge_top.v", 'v'); // ac
+selectCodeEditor("serving_bridge_top.v", 237, 110); // ac
+selectCodeEditor("serving_bridge_top.v", 357, 131, false, false, false, true, false); // ac - Popup Trigger
+selectMenuItem(RDIResource.HInputHandler_UNINDENT_SELECTION, "Unindent Selection"); // ao
+selectCodeEditor("serving_bridge_top.v", 252, 128, false, false, false, true, false); // ac - Popup Trigger
+selectMenuItem(RDIResource.HInputHandler_UNINDENT_SELECTION, "Unindent Selection"); // ao
+selectCodeEditor("serving_bridge_top.v", 181, 113); // ac
+selectCodeEditor("serving_bridge_top.v", 185, 137); // ac
+selectCodeEditor("serving_bridge_top.v", 179, 126); // ac
+selectCodeEditor("serving_bridge_top.v", 181, 160); // ac
+selectCodeEditor("serving_bridge_top.v", 356, 163); // ac
+selectCodeEditor("serving_bridge_top.v", 414, 93); // ac
+selectCodeEditor("serving_bridge_top.v", 373, 106); // ac
+selectCodeEditor("serving_bridge_top.v", 343, 131); // ac
+selectCodeEditor("serving_bridge_top.v", 434, 144); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "serving.v", 2); // o
+selectCodeEditor("serving.v", 264, 333); // ac
+selectCodeEditor("serving.v", 246, 283); // ac
+selectCodeEditor("serving.v", 206, 298); // ac
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "serving_bridge_top.v", 1); // o
+// Elapsed time: 11 seconds
+selectCodeEditor("serving_bridge_top.v", 57, 210); // ac
+selectCodeEditor("serving_bridge_top.v", 74, 213); // ac
+typeControlKey((HResource) null, "serving_bridge_top.v", 'v'); // ac
+selectCodeEditor("serving_bridge_top.v", 83, 212); // ac
+selectCodeEditor("serving_bridge_top.v", 47, 230); // ac
+selectCodeEditor("serving_bridge_top.v", 47, 245); // ac
+selectCodeEditor("serving_bridge_top.v", 45, 263); // ac
+selectCodeEditor("serving_bridge_top.v", 45, 284); // ac
+selectCodeEditor("serving_bridge_top.v", 47, 252); // ac
+selectCodeEditor("serving_bridge_top.v", 41, 262); // ac
+selectCodeEditor("serving_bridge_top.v", 42, 282); // ac
+selectCodeEditor("serving_bridge_top.v", 239, 214); // ac
+selectCodeEditor("serving_bridge_top.v", 162, 233); // ac
+selectCodeEditor("serving_bridge_top.v", 224, 264); // ac
+selectCodeEditor("serving_bridge_top.v", 145, 282); // ac
+selectCodeEditor("serving_bridge_top.v", 148, 217); // ac
+selectCodeEditor("serving_bridge_top.v", 118, 230); // ac
+selectCodeEditor("serving_bridge_top.v", 129, 248); // ac
+selectCodeEditor("serving_bridge_top.v", 136, 245); // ac
+selectCodeEditor("serving_bridge_top.v", 91, 246); // ac
+selectCodeEditor("serving_bridge_top.v", 62, 216); // ac
+// Elapsed time: 10 seconds
+selectCodeEditor("serving_bridge_top.v", 70, 215); // ac
+// Elapsed time: 12 seconds
+selectCodeEditor("serving_bridge_top.v", 86, 215); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "serving.v", 2); // o
+selectCodeEditor("serving.v", 204, 350); // ac
+typeControlKey((HResource) null, "serving.v", 'c'); // ac
+selectCodeEditor("serving.v", 15, 365); // ac
+selectCodeEditor("serving.v", 26, 366); // ac
+typeControlKey((HResource) null, "serving.v", 'v'); // ac
+selectCodeEditor("serving.v", 0, 368); // ac
+selectCodeEditor("serving.v", 104, 369, false, false, false, true, false); // ac - Popup Trigger
+selectMenuItem(RDIResource.HInputHandler_INDENT_SELECTION, "Indent Selection"); // ao
+selectCodeEditor("serving.v", 128, 363, false, false, false, true, false); // ac - Popup Trigger
+selectMenuItem(RDIResource.HInputHandler_INDENT_SELECTION, "Indent Selection"); // ao
+selectCodeEditor("serving.v", 141, 374, false, false, false, true, false); // ac - Popup Trigger
+selectMenuItem(RDIResource.HInputHandler_INDENT_SELECTION, "Indent Selection"); // ao
+selectCodeEditor("serving.v", 347, 332); // ac
+selectCodeEditor("serving.v", 259, 348); // ac
+selectCodeEditor("serving.v", 233, 364); // ac
+selectCodeEditor("serving.v", 331, 383); // ac
+selectCodeEditor("serving.v", 242, 399); // ac
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "serving_bridge_top.v", 1); // o
+// Elapsed time: 13 seconds
+selectCodeEditor("serving_bridge_top.v", 92, 123); // ac
+selectCodeEditor("serving_bridge_top.v", 160, 148); // ac
+selectCodeEditor("serving_bridge_top.v", 120, 161); // ac
+// Elapsed time: 10 seconds
+selectCodeEditor("serving_bridge_top.v", 121, 130); // ac
+// Elapsed time: 12 seconds
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 19); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 20); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, serving_bridge_top_tb (serving_bridge_top_tb.v)]", 31, true, false, false, false, true, false); // D - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_SET_AS_TOP, "Set as Top"); // ao
+// Run Command: PAResourceCommand.PACommandNames_SET_AS_TOP
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // f
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ao
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: LAUNCH_SIM_LOG
+// TclEventType: LAUNCH_SIM
+// TclEventType: LOAD_FEATURE
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// PAPropertyPanels.initPanels (serving_bridge_top_tb.v) elapsed time: 0.2s
+// WARNING: HEventQueue.dispatchEvent() is taking  1432 ms.
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// Elapsed time: 27 seconds
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // t
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,031 MB. GUI used memory: 69 MB. Current time: 6/21/25, 10:12:58 AM PKT
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MOVE_CURSOR
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_STOPPED
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// 'd' command handler elapsed time: 29 seconds
+dismissDialog("Run Simulation"); // e
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Untitled 1", 2); // o
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,036 MB. GUI used memory: 69 MB. Current time: 6/21/25, 10:13:06 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,036 MB. GUI used memory: 69 MB. Current time: 6/21/25, 10:13:06 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,037 MB. GUI used memory: 70 MB. Current time: 6/21/25, 10:13:07 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,037 MB. GUI used memory: 70 MB. Current time: 6/21/25, 10:13:07 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,037 MB. GUI used memory: 72 MB. Current time: 6/21/25, 10:13:07 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,037 MB. GUI used memory: 70 MB. Current time: 6/21/25, 10:13:07 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, i_bmresp[1:0]]", 6, true); // m - Node
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// HMemoryUtils.trashcanNow. Engine heap size: 1,038 MB. GUI used memory: 69 MB. Current time: 6/21/25, 10:13:09 AM PKT
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "dut ; serving_bridge_top ; Verilog Module", 1, "dut", 0, true); // c - Node
+// TclEventType: SIMULATION_REQUEST_SELECT_SCOPES
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "serving ; serving ; Verilog Module", 2, "serving", 0, true); // c - Node
+// TclEventType: SIMULATION_REQUEST_SELECT_SCOPES
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_REQUEST_SELECT_SCOPES
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "serving ; serving ; Verilog Module", 2, "serving", 0, true, false, false, false, true, false); // c - Popup Trigger - Node
+// TclEventType: SIMULATION_REQUEST_SELECT_SCOPES
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectMenuItem((HResource) null, "Add to Wave Window"); // ao
+// Tcl Command: 'current_wave_config {Untitled 1}'
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH, "simulation_relaunch"); // B
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH
+// TclEventType: SIMULATION_MODEL_ABOUT_TO_CLOSE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_MODEL_RELOADED
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_MODEL_ABOUT_TO_CLOSE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_MODEL_RELOADED
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_DELETE_ALL_BREAKPOINTS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MOVE_CURSOR
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MOVE_CURSOR
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_STOPPED
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// 'a' command handler elapsed time: 18 seconds
+// Elapsed time: 18 seconds
+dismissDialog("Relaunch Simulation"); // b
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Untitled 1*", 2); // o
+// HMemoryUtils.trashcanNow. Engine heap size: 1,041 MB. GUI used memory: 70 MB. Current time: 6/21/25, 10:13:39 AM PKT
+floatFrame(RDIResource.RDIViews_WAVEFORM_VIEWER, "Untitled 1*"); // R
+// RDIResource.RDIViews_WAVEFORM_VIEWER: Untitled 1*: float view
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+maximizeFrame(RDIResource.RDIViews_WAVEFORM_VIEWER, "Untitled 1*"); // R
+// HMemoryUtils.trashcanNow. Engine heap size: 1,044 MB. GUI used memory: 72 MB. Current time: 6/21/25, 10:13:41 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(RDIResource.GraphicalView_ZOOM_FIT, "Waveform Viewer_zoom_fit"); // B
+// HMemoryUtils.trashcanNow. Engine heap size: 1,050 MB. GUI used memory: 72 MB. Current time: 6/21/25, 10:13:51 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,050 MB. GUI used memory: 72 MB. Current time: 6/21/25, 10:14:03 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,050 MB. GUI used memory: 72 MB. Current time: 6/21/25, 10:14:04 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,050 MB. GUI used memory: 72 MB. Current time: 6/21/25, 10:14:05 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,050 MB. GUI used memory: 72 MB. Current time: 6/21/25, 10:14:06 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,050 MB. GUI used memory: 72 MB. Current time: 6/21/25, 10:14:07 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 27 seconds
+expandTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, memfile[63:0]]", 14); // m
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,050 MB. GUI used memory: 72 MB. Current time: 6/21/25, 10:14:11 AM PKT
+collapseTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, memfile[63:0]]", 14); // m
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, memfile[63:0]]", 14, true, false, true, false, false, false); // m - Control Key - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, w[31:0]]", 21, true, true, false, false, false, false); // m - Shift Key - Node
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,058 MB. GUI used memory: 72 MB. Current time: 6/21/25, 10:14:20 AM PKT
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, regs[31:0]]", 19, true, false, false, false, true, false); // m - Popup Trigger - Node
+selectMenu("Signal Color"); // al
+selectMenu("Waveform Style"); // al
+selectMenu("Signal Color"); // al
+selectMenu("Radix"); // al
+selectMenuItem((HResource) null, "ASCII"); // ac
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 13 seconds
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, memsize[31:0]]", 15, true); // m - Node
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, memsize[31:0]]", 15, true, false, false, false, true, false); // m - Popup Trigger - Node
+selectMenu("Name"); // al
+selectMenu("Waveform Style"); // al
+selectMenu("Signal Color"); // al
+selectMenu("Radix"); // al
+selectMenu("Radix"); // al
+selectMenuItem((HResource) null, "Hexadecimal"); // ac
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// [GUI Memory]: 130 MB (+6929kb) [00:09:08]
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,058 MB. GUI used memory: 73 MB. Current time: 6/21/25, 10:14:42 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectMenu("Waveform Style"); // al
+selectMenu("Signal Color"); // al
+selectMenu("Radix"); // al
+selectMenu("Radix"); // al
+selectMenuItem((HResource) null, "Unsigned Decimal"); // ac
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, rf_width[31:0]]", 20, true); // m - Node
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, rf_width[31:0]]", 20, true, false, false, false, true, false); // m - Popup Trigger - Node
+selectMenu("Radix"); // al
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectMenu("Radix"); // al
+selectMenuItem((HResource) null, "Unsigned Decimal"); // ac
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,058 MB. GUI used memory: 72 MB. Current time: 6/21/25, 10:14:55 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, w[31:0]]", 21, true); // m - Node
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, w[31:0]]", 21, true, false, false, false, true, false); // m - Popup Trigger - Node
+selectMenu("Radix"); // al
+selectMenu("Radix"); // al
+selectMenuItem((HResource) null, "Unsigned Decimal"); // ac
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// HMemoryUtils.trashcanNow. Engine heap size: 1,058 MB. GUI used memory: 73 MB. Current time: 6/21/25, 10:15:02 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,058 MB. GUI used memory: 73 MB. Current time: 6/21/25, 10:15:13 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,058 MB. GUI used memory: 72 MB. Current time: 6/21/25, 10:15:13 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,058 MB. GUI used memory: 72 MB. Current time: 6/21/25, 10:15:13 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,058 MB. GUI used memory: 72 MB. Current time: 6/21/25, 10:15:13 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,058 MB. GUI used memory: 72 MB. Current time: 6/21/25, 10:15:16 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,058 MB. GUI used memory: 72 MB. Current time: 6/21/25, 10:15:22 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,058 MB. GUI used memory: 73 MB. Current time: 6/21/25, 10:15:22 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,058 MB. GUI used memory: 73 MB. Current time: 6/21/25, 10:15:22 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,058 MB. GUI used memory: 73 MB. Current time: 6/21/25, 10:15:22 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,058 MB. GUI used memory: 72 MB. Current time: 6/21/25, 10:15:23 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,058 MB. GUI used memory: 77 MB. Current time: 6/21/25, 10:15:23 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,058 MB. GUI used memory: 72 MB. Current time: 6/21/25, 10:15:28 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,058 MB. GUI used memory: 75 MB. Current time: 6/21/25, 10:15:28 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,058 MB. GUI used memory: 73 MB. Current time: 6/21/25, 10:15:28 AM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,058 MB. GUI used memory: 72 MB. Current time: 6/21/25, 10:15:32 AM PKT
+// Elapsed time: 31 seconds
+dockFrame(RDIResource.RDIViews_WAVEFORM_VIEWER, "Untitled 1*"); // R
+maximizeFrame(RDIResource.RDIViews_WAVEFORM_VIEWER, "Untitled 1*"); // R
+// RDIResource.RDIViews_WAVEFORM_VIEWER: Untitled 1*: dock view
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, o_wb_sel[3:0]]", 6, true); // m - Node
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,067 MB. GUI used memory: 70 MB. Current time: 6/21/25, 10:15:33 AM PKT
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "serving.v", 1); // o
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // j
+closeTask("Simulation", "Behavioral Simulation - Functional - sim_1 - serving_bridge_top_tb", "DesignTask.SIMULATION");
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Confirm Close"); // u
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_CLOSE_WCFG
+selectButton("OptionPane.button", "Discard"); // JButton
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+dismissDialog("Close"); // bq
+// Elapsed time: 12 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "serving.v", 2); // o
+// Elapsed time: 17 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "serving_bridge_top.v", 1); // o
+// Elapsed time: 17 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 20); // D
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis]", 11, true); // f - Node
+collapseTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis]", 11); // f
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis]", 11); // f
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Open Elaborated Design]", 12, true); // f - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_RTL_DESIGN
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Elaborate Design"); // u
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a
+// HMemoryUtils.trashcanNow. Engine heap size: 1,136 MB. GUI used memory: 70 MB. Current time: 6/21/25, 10:16:39 AM PKT
+// [Engine Memory]: 1,136 MB (+64420kb) [00:11:05]
+// Elapsed time: 11 seconds
+selectCodeEditor("serving_bridge_top.v", 165, 127); // ac
+// HMemoryUtils.trashcanNow. Engine heap size: 1,216 MB. GUI used memory: 70 MB. Current time: 6/21/25, 10:16:54 AM PKT
+selectCodeEditor("serving_bridge_top.v", 133, 127); // ac
+// TclEventType: ELABORATE_START
+// HMemoryUtils.trashcanNow. Engine heap size: 1,539 MB. GUI used memory: 70 MB. Current time: 6/21/25, 10:17:07 AM PKT
+// [Engine Memory]: 1,564 MB (+389377kb) [00:11:34]
+// TclEventType: ELABORATE_FINISH
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 1,911 MB. GUI used memory: 70 MB. Current time: 6/21/25, 10:17:24 AM PKT
+// [Engine Memory]: 1,911 MB (+281457kb) [00:11:50]
+// Xgd.load filename: C:/Xilinx/Vivado/2022.2/data/parts/xilinx/spartan7/devint/spartan7/xc7s50/xc7s50.xgd; ZipEntry: xc7s50_detail.xgd elapsed time: 0.5s
+// DeviceModel: Load Xgds SwingWorker Join Forever elapsed time: 0.6s
+// TclEventType: DESIGN_NEW
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// WARNING: HEventQueue.dispatchEvent() is taking  2361 ms.
+// TclEventType: CURR_DESIGN_SET
+// Elapsed time: 31 seconds
+dismissDialog("Open Elaborated Design"); // bq
+closeView(PAResourceOtoP.PAViews_SCHEMATIC, "Schematic"); // j
+// [GUI Memory]: 139 MB (+2446kb) [00:12:03]
+// [GUI Memory]: 149 MB (+3120kb) [00:12:03]
+// Elapsed time: 11 seconds
+selectCodeEditor("serving_bridge_top.v", 287, 349); // ac
+// Elapsed time: 21 seconds
+selectCodeEditor("serving_bridge_top.v", 2, 293); // ac
+// Elapsed time: 45 seconds
+selectCodeEditor("serving_bridge_top.v", 54, 226); // ac
+selectCodeEditor("serving_bridge_top.v", 54, 164, false, true, false, false, false); // ac - Control Key
+selectCodeEditor("serving_bridge_top.v", 53, 110, true, false, false, false, false); // ac - Shift Key
+selectCodeEditor("serving_bridge_top.v", 321, 293); // ac
+selectCodeEditor("serving_bridge_top.v", 335, 305); // ac
+typeControlKey((HResource) null, "serving_bridge_top.v", 'c'); // ac
+selectCodeEditor("serving_bridge_top.v", 6, 220); // ac
+typeControlKey((HResource) null, "serving_bridge_top.v", 'v'); // ac
+selectCodeEditor("serving_bridge_top.v", 50, 213); // ac
+selectCodeEditor("serving_bridge_top.v", 246, 215); // ac
+selectCodeEditor("serving_bridge_top.v", 277, 234); // ac
+selectCodeEditor("serving_bridge_top.v", 54, 228); // ac
+typeControlKey((HResource) null, "serving_bridge_top.v", 'c'); // ac
+selectCodeEditor("serving_bridge_top.v", 281, 222); // ac
+typeControlKey((HResource) null, "serving_bridge_top.v", 'v'); // ac
+selectCodeEditor("serving_bridge_top.v", 62, 262); // ac
+// Elapsed time: 11 seconds
+selectCodeEditor("serving_bridge_top.v", 51, 213); // ac
+typeControlKey((HResource) null, "serving_bridge_top.v", 'c'); // ac
+selectCodeEditor("serving_bridge_top.v", 278, 142); // ac
+typeControlKey((HResource) null, "serving_bridge_top.v", 'v'); // ac
+selectCodeEditor("serving_bridge_top.v", 56, 179); // ac
+selectCodeEditor("serving_bridge_top.v", 196, 276, false, false, false, true, false); // ac - Popup Trigger
+selectMenuItem(RDIResource.HInputHandler_UNINDENT_SELECTION, "Unindent Selection"); // ao
+selectCodeEditor("serving_bridge_top.v", 170, 265, false, false, false, true, false); // ac - Popup Trigger
+selectMenuItem(RDIResource.HInputHandler_UNINDENT_SELECTION, "Unindent Selection"); // ao
+selectCodeEditor("serving_bridge_top.v", 277, 283); // ac
+selectCodeEditor("serving_bridge_top.v", 328, 211); // ac
+typeControlKey((HResource) null, "serving_bridge_top.v", 'c'); // ac
+selectCodeEditor("serving_bridge_top.v", 298, 210); // ac
+typeControlKey((HResource) null, "serving_bridge_top.v", 'v'); // ac
+selectCodeEditor("serving_bridge_top.v", 57, 230); // ac
+// Elapsed time: 14 seconds
+selectCodeEditor("serving_bridge_top.v", 55, 145); // ac
+typeControlKey((HResource) null, "serving_bridge_top.v", 'c'); // ac
+selectCodeEditor("serving_bridge_top.v", 2, 140); // ac
+typeControlKey((HResource) null, "serving_bridge_top.v", 'v'); // ac
+selectCodeEditor("serving_bridge_top.v", 53, 159); // ac
+selectCodeEditor("serving_bridge_top.v", 150, 244, false, false, false, true, false); // ac - Popup Trigger
+selectMenuItem(RDIResource.HInputHandler_UNINDENT_SELECTION, "Unindent Selection"); // ao
+selectCodeEditor("serving_bridge_top.v", 147, 214, false, false, false, true, false); // ac - Popup Trigger
+selectMenuItem(RDIResource.HInputHandler_UNINDENT_SELECTION, "Unindent Selection"); // ao
+selectCodeEditor("serving_bridge_top.v", 297, 229); // ac
+// Elapsed time: 151 seconds
+selectCodeEditor("serving_bridge_top.v", 354, 293); // ac
+// Elapsed time: 24 seconds
+selectCodeEditor("serving_bridge_top.v", 296, 388); // ac
+typeControlKey((HResource) null, "serving_bridge_top.v", 'c'); // ac
+// Elapsed time: 212 seconds
+typeControlKey((HResource) null, "serving_bridge_top.v", 'v'); // ac
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+selectButton(PAResourceCommand.PACommandNames_SCHEMATIC, "run_schematic"); // B
+// Run Command: PAResourceCommand.PACommandNames_SCHEMATIC
+selectButton(PAResourceOtoP.ProjectTab_RELOAD, "Reload"); // g
+// TclEventType: ELABORATE_START
+// HMemoryUtils.trashcanNow. Engine heap size: 2,020 MB. GUI used memory: 95 MB. Current time: 6/21/25, 10:27:39 AM PKT
+// TclEventType: ELABORATE_FINISH
+// TclEventType: DESIGN_REFRESH
+// [Engine Memory]: 2,147 MB (+147021kb) [00:22:13]
+// Engine heap size: 2,148 MB. GUI used memory: 77 MB. Current time: 6/21/25, 10:27:47 AM PKT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,148 MB. GUI used memory: 76 MB. Current time: 6/21/25, 10:27:47 AM PKT
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 2,148 MB. GUI used memory: 76 MB. Current time: 6/21/25, 10:27:49 AM PKT
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// WARNING: HEventQueue.dispatchEvent() is taking  2397 ms.
+// Elapsed time: 18 seconds
+dismissDialog("Reloading"); // bq
+floatFrame(PAResourceOtoP.PAViews_SCHEMATIC, "Schematic"); // R
+// PAResourceOtoP.PAViews_SCHEMATIC: Schematic: float view
+maximizeFrame(PAResourceOtoP.PAViews_SCHEMATIC, "Schematic"); // R
+// Elapsed time: 36 seconds
+selectButton(PAResourceCommand.PACommandNames_ZOOM_FIT, "Schematic_zoom_fit"); // B
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_FIT
+dockFrame(PAResourceOtoP.PAViews_SCHEMATIC, "Schematic"); // R
+maximizeFrame(PAResourceOtoP.PAViews_SCHEMATIC, "Schematic"); // R
+// PAResourceOtoP.PAViews_SCHEMATIC: Schematic: dock view
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "serving_bridge_top.v", 1); // o
+// Elapsed time: 11 seconds
+selectCodeEditor("serving_bridge_top.v", 353, 395); // ac
+selectCodeEditor("serving_bridge_top.v", 307, 195); // ac
+selectCodeEditor("serving_bridge_top.v", 308, 253); // ac
+// Elapsed time: 18 seconds
+selectCodeEditor("serving_bridge_top.v", 287, 79); // ac
+// Elapsed time: 27 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "serving.v", 2); // o

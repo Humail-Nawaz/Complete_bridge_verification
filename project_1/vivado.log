@@ -80,3 +80,68 @@ INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/
 Scanning sources...
 Finished scanning sources
 open_project: Time (s): cpu = 00:00:50 ; elapsed = 00:00:25 . Memory (MB): peak = 1123.996 ; gain = 357.480
+update_compile_order -fileset sources_1
+set_property top serving_bridge_top_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1165.645 ; gain = 0.000
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:17 . Memory (MB): peak = 1165.645 ; gain = 0.000
+Time resolution is 1 ps
+source serving_bridge_top_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Preloading serving_bridge_top_tb.dut.serving.ram from file.hex
+Starting AXI write and read test...
+Data written without error
+Data read correctly without error
+AXI write and read test complete.
+$finish called at time : 345 ns : File "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sim_1/new/serving_bridge_top_tb.v" Line 155
+xsim: Time (s): cpu = 00:00:12 ; elapsed = 00:00:05 . Memory (MB): peak = 1191.766 ; gain = 20.168
+launch_simulation: Time (s): cpu = 00:00:16 ; elapsed = 00:00:30 . Memory (MB): peak = 1191.766 ; gain = 26.121
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/serving_bridge_top_tb/dut/serving}} 
+relaunch_sim
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 1206.414 ; gain = 0.000
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 1206.414 ; gain = 0.000
+Time resolution is 1 ps
+Preloading serving_bridge_top_tb.dut.serving.ram from file.hex
+Starting AXI write and read test...
+Data written without error
+Data read correctly without error
+AXI write and read test complete.
+$finish called at time : 345 ns : File "C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.srcs/sim_1/new/serving_bridge_top_tb.v" Line 155
+relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:18 . Memory (MB): peak = 1206.414 ; gain = 0.000
+close_sim
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1969.961 ; gain = 414.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2064.305 ; gain = 508.621
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2064.305 ; gain = 508.621
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2064.305 ; gain = 508.621
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.060 . Memory (MB): peak = 2064.305 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2115.766 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:51 . Memory (MB): peak = 2197.391 ; gain = 967.703
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 2259.535 ; gain = 62.145
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 2364.512 ; gain = 167.121
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 2387.332 ; gain = 189.941
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 2387.332 ; gain = 189.941
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.060 . Memory (MB): peak = 2389.008 ; gain = 0.000
+refresh_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:18 . Memory (MB): peak = 2390.184 ; gain = 192.793

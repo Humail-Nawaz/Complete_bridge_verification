@@ -12,3 +12,19 @@
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/DELL/OneDrive/Desktop/FYP/TESTING/Bridge_verification/project_1/project_1.xpr
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top serving_bridge_top_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source serving_bridge_top_tb.tcl
+current_wave_config {Untitled 1}
+add_wave {{/serving_bridge_top_tb/dut/serving}} 
+relaunch_sim
+close_sim
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+refresh_design
